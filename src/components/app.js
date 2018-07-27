@@ -6,7 +6,7 @@ function App() {
     return (
         <div className="container">
             <h1>Student Grade Table</h1>
-            <Table/>
+            <Table data={students}/>
         </div>
 
     )
@@ -14,7 +14,20 @@ function App() {
 
 export default App;
 
-// ReactDOM.render(
-//     <App />,
-//     document.getElementById('root')
-// );
+const students = [
+    {
+        name: 'Peter Pan',
+        course: 'NeverNeverLand',
+        grade: 100
+    },
+    {
+        name: 'Captain Hook',
+        course: 'Clocks',
+        grade: 1
+    },
+    {
+        name: 'Robin Williams',
+        course: 'Life',
+        grade: 100
+    }
+];
