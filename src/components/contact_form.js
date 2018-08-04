@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Field from './field';
 
 class ContactForm extends Component{
     constructor(props){
@@ -7,7 +8,9 @@ class ContactForm extends Component{
         this.state = {
             form: {
                 firstName: '',
-                lastName: ''
+                lastName: '',
+                phone: '',
+                email: ''
             }
         };
 
@@ -35,31 +38,60 @@ class ContactForm extends Component{
     }
 
     render(){
-        const { firstName, lastName } = this.state.form;
+        const { firstName, lastName, phone, email } = this.state.form;
         return (
             <form onSubmit={this.handleSubmit}>
-                <div className="form-group">
-                    <label>First Name</label>
-                    <input
-                        name="firstName"
-                        type="text"
-                        value={firstName}
-                        className="form-control"
-                        onChange={this.handleInputChange}
-                    />
-                </div>
-                <div className="form-group">
-                    <label>Last Name</label>
-                    <input name="lastName"
-                           type="text"
-                           value={lastName}
-                           className="form-control"
-                           onChange={this.handleInputChange}
-                    />
-                </div>
+                <Field
+                    name="firstName"
+                    label="First Name"
+                    type="text"
+                    value={firstName}
+                    onChange={this.handleInputChange}
+                />
+                <Field
+                    name="lastName"
+                    label="Last Name"
+                    type="text"
+                    value={lastName}
+                    onChange={this.handleInputChange}
+                />
+                <Field
+                    name="phone"
+                    label="Phone"
+                    type="tel"
+                    value={phone}
+                    onChange={this.handleInputChange}
+                />
+                <Field
+                    name="email"
+                    label="Email"
+                    type="email"
+                    value={email}
+                    onChange={this.handleInputChange}
+                />
+
                 <button>Add Contact</button>
             </form>
         );
+                /*<div className="form-group">*/
+                    /*<label>First Name</label>*/
+                    /*<input*/
+                        /*name="firstName"*/
+                        /*type="text"*/
+                        /*value={firstName}*/
+                        /*className="form-control"*/
+                        /*onChange={this.handleInputChange}*/
+                    /*/>*/
+                /*</div>*/
+                /*<div className="form-group">*/
+                    /*<label>Last Name</label>*/
+                    /*<input name="lastName"*/
+                           /*type="text"*/
+                           /*value={lastName}*/
+                           /*className="form-control"*/
+                           /*onChange={this.handleInputChange}*/
+                    /*/>*/
+                /*</div>*/
     }
 }
 
