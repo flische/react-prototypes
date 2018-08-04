@@ -17,10 +17,10 @@ class ContactList extends Component{
  // a new array that holds JSX instead of the contact objects
         const list = this.state.contacts.map((item,index) => {
             // console.log('item: ', item);
-            return <ContactCard key={index} firstName={item.firstName} lastName={item.lastName}/>
+            return <ContactCard key={index} contact={item}/>
         });
         // return <h1>Contact List</h1>
-        return <div>{list}</div>
+        return ( <div className="col-8">{list}</div> );
     }
 
 }
